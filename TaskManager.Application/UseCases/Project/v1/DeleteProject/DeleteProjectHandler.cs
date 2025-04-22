@@ -1,17 +1,8 @@
 ﻿using AutoMapper;
 using MediatR;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Runtime.ConstrainedExecution;
-using System.Text;
-using System.Threading.Tasks;
 using TaskManager.Application.Commons.Bases;
-using TaskManager.Application.UseCases.Task.v1.DeleteTask;
 using TaskManager.Domain.DTOs;
-using TaskManager.Domain.Entities;
 using TaskManager.Infra.Interfaces.Services;
-using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace TaskManager.Application.UseCases.Project.v1.DeleteProject
 {

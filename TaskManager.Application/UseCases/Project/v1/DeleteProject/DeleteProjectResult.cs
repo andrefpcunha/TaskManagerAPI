@@ -1,7 +1,9 @@
-﻿using TaskManager.Domain.Entities;
+﻿
+using System.Diagnostics.CodeAnalysis;
 
-namespace TaskManager.Application.UseCases.Project.v1.DeleteProject
+namespace TaskManager.Application.UseCases.Project.v1
 {
+    [ExcludeFromCodeCoverage]
     public class DeleteProjectResult
     {
         public Guid ModifiedBy { get; set; }

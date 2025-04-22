@@ -1,6 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using System.Diagnostics.CodeAnalysis;
 using System.Reflection;
 using TaskManager.Application.Services;
 using TaskManager.Infra.Interfaces.Repositories;
@@ -10,6 +11,7 @@ using TaskManager.Persistence.Repositories;
 
 namespace TaskManager.Application.Commons
 {
+    [ExcludeFromCodeCoverage]
     public static class ConfigureServices
     {
         public static void AddInjectionServices(this IServiceCollection services, IConfiguration configuration)

@@ -2,6 +2,7 @@
 using MediatR;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using System.Diagnostics.CodeAnalysis;
 using TaskManager.Application.UseCases.Task.v1.DeleteTask;
 using TaskManager.Application.UseCases.Task.v1.GetAllTasks;
 using TaskManager.Application.UseCases.Task.v1.NewTask;
@@ -13,6 +14,7 @@ namespace TaskManager.API.Controllers.v1
     [ApiVersion(1)]
     [Produces("application/json")]
     [Route("api/v{version:apiVersion}/[controller]")]
+    [ExcludeFromCodeCoverage]
     public class TasksController : ControllerBase
     {
         #region Properties

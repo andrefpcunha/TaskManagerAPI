@@ -1,12 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Diagnostics.CodeAnalysis;
 using TaskManager.Application.Commons.Bases;
 
 namespace TaskManager.Application.Commons.Extensions
 {
+    [ExcludeFromCodeCoverage]
     public class ValidationExceptionCustom : Exception
     {
         public IEnumerable<BaseError> Errors { get; }

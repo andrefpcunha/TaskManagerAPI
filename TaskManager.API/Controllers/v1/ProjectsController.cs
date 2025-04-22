@@ -2,6 +2,7 @@
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using System.Diagnostics.CodeAnalysis;
 using TaskManager.Application.UseCases.Project.v1.DeleteProject;
 using TaskManager.Application.UseCases.Project.v1.GetProjectsByUser;
 using TaskManager.Application.UseCases.Project.v1.GetTasksbyProject;
@@ -14,6 +15,7 @@ namespace TaskManager.API.Controllers.v1
     [ApiController]
     [ApiVersion(1)]
     [Route("api/v{version:apiVersion}/[controller]")]
+    [ExcludeFromCodeCoverage]
     public class ProjectsController : ControllerBase
     {
         #region Properties

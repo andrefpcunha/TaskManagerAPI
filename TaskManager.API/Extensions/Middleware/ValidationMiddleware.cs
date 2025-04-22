@@ -1,9 +1,11 @@
-﻿using System.Text.Json;
+﻿using System.Diagnostics.CodeAnalysis;
+using System.Text.Json;
 using TaskManager.Application.Commons.Bases;
 using TaskManager.Application.Commons.Extensions;
 
 namespace TaskManager.API.Extensions.Middleware
 {
+    [ExcludeFromCodeCoverage]
     public class ValidationMiddleware
     {
         private readonly RequestDelegate _next;

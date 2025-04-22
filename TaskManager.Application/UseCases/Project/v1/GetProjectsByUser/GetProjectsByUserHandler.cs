@@ -1,8 +1,6 @@
 ﻿using AutoMapper;
 using MediatR;
 using TaskManager.Application.Commons.Bases;
-using TaskManager.Application.UseCases.Task.v1.NewTask;
-using TaskManager.Domain.Entities;
 using TaskManager.Infra.Interfaces.Services;
 
 namespace TaskManager.Application.UseCases.Project.v1.GetProjectsByUser

@@ -24,7 +24,7 @@ namespace TaskManager.Application.Services
 
             if (total is null)
                 return false;
-            else if (total.Count > 0 && total.Count == filter.LimitTaskInProject)
+            else if (total.Count > 0 && total.Count >= filter.LimitTaskInProject)
                 return true;
             else
                 return false;
