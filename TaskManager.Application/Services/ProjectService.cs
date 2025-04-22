@@ -48,9 +48,9 @@ namespace TaskManager.Application.Services
             return entity;
         }
 
-        public async Task<Projects> GetProjectById(int projectId)
+        public async Task<Projects?> GetProjectById(int projectId)
         {
-            return await _projectsRepository.GetByIdAsync(projectId, default);
+            return await _projectsRepository.GetProjectById(projectId);
         }
 
         public async Task<bool> DeleteProject(Projects entity)

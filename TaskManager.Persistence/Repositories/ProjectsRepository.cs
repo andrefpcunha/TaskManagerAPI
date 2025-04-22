@@ -9,6 +9,13 @@ namespace TaskManager.Persistence.Repositories
     public class ProjectsRepository(AppDbContext context)
     : RepositoryBase<Domain.Entities.Projects>(context), IProjectsRepository
     {
+        public async Task<Projects?> GetProjectById(int projectId)
+        {
+            return await context.Projects.Where(x => x.Id == projectId)
+                        .Include(p => p.Tasks)
+                        .FirstOrDefaultAsync();
+        }
+
         public async Task<Projects?> GetTasksByProjectId(int projectId)
         {
             return await context.Projects.Where(x => x.Id == projectId)

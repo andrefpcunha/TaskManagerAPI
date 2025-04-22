@@ -55,3 +55,4 @@ TaskManager/
   - WSL2
   - Docker Desktop
   - SDK .NET 9.0
+  - Visual Studio 2022

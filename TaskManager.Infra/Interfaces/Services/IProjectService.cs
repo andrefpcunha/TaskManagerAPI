@@ -7,7 +7,7 @@ namespace TaskManager.Infra.Interfaces.Services
         Task<IEnumerable<Projects>> GetAllProjectsByUserId(String userId);
         Task<IEnumerable<Domain.Entities.Tasks>?> GetTasksByProjectId(int projectId);
         Task<Projects> AddProject(Projects entity);
-        Task<Projects> GetProjectById(int projectId);
+        Task<Projects?> GetProjectById(int projectId);
         Task<bool> DeleteProject(Projects entity);
 
     }

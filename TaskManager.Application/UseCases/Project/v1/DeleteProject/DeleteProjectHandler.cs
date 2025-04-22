@@ -32,11 +32,11 @@ namespace TaskManager.Application.UseCases.Project.v1.DeleteProject
                     response.Succcess = false;
                     response.Message = $"Could not to delete ProjectId {command.ProjectId}, its not exists";
                 }
+                //Um projeto não pode ser removido se ainda houver tarefas pendentes associadas a ele.
                 else if (project.Tasks != null && 
                     project.Tasks.Any(x => x.Status == StatusTaskEnum.ToDo 
                                         || x.Status == StatusTaskEnum.Doing))
                 {
-                    //Um projeto não pode ser removido se ainda houver tarefas pendentes associadas a ele.
                     response.Succcess = false;
                     //Caso o usuário tente remover um projeto com tarefas pendentes, a API deve retornar um erro e sugerir a conclusão ou remoção das tarefas primeiro.
                     response.Message = $"Could not to delete ProjectId {command.ProjectId}, because there is some Pending Task";
