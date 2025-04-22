@@ -3,6 +3,7 @@ using MediatR;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using TaskManager.Application.UseCases.Task.v1.DeleteTask;
+using TaskManager.Application.UseCases.Task.v1.GetAllTasks;
 using TaskManager.Application.UseCases.Task.v1.NewTask;
 using TaskManager.Application.UseCases.Task.v1.UpdateTask;
 
@@ -33,9 +34,11 @@ namespace TaskManager.API.Controllers.v1
         [HttpPost]
         [ProducesResponseType(typeof(NewTaskResult), StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
-        public async Task<ActionResult> NewTaskToProject([FromBody] NewTaskCommand command)
+        public async Task<ActionResult> NewTask([FromBody] NewTaskCommand command)
         {
             _logger.LogInformation("Creating new Task to a Project");
+            var userId = Guid.NewGuid();
+            command.UserId = userId;
             var response = await _mediator.Send(command);
             if (response.Succcess)
             {
@@ -50,7 +53,7 @@ namespace TaskManager.API.Controllers.v1
 
         //atualizar o status ou detalhes de uma tarefa
         [HttpPut("{taskId}")]
-        public async Task<ActionResult> UpdateTask(Guid taskId, [FromBody] UpdateTaskComand request)
+        public async Task<ActionResult> UpdateTask(int taskId, [FromBody] UpdateTaskComand request)
         {
             _logger.LogInformation($"Updating TaskId {taskId}");
             var userId = Guid.NewGuid();
@@ -70,7 +73,7 @@ namespace TaskManager.API.Controllers.v1
 
         //remover uma tarefa de um projeto
         [HttpDelete("{taskId}/projects/{projectId}")]
-        public async Task<ActionResult> DeleteTask(Guid taskId, Guid projectId)
+        public async Task<ActionResult> DeleteTask(int taskId, int projectId)
         {
             _logger.LogInformation($"Deleting TaskId {taskId} from ProjectId {projectId}");
             var userId = Guid.NewGuid();
@@ -87,10 +90,29 @@ namespace TaskManager.API.Controllers.v1
             return BadRequest(response);
         }
 
+        // ocultado no Swagger
+        [ApiExplorerSettings(IgnoreApi = true)]
+        [HttpGet("getAll")]
+        public async Task<ActionResult> GetAllTasks()
+        {
+            _logger.LogInformation($"Getting all Tasks");
 
+            var command = new GetAllTasksQuery();
+            var response = await _mediator.Send(command);
+            if (response.Succcess)
+            {
+                _logger.LogInformation($"Getting all Tasks returned successfully");
+                return Ok(response);
+            }
+
+            _logger.LogInformation($"Could not Getting all Tasks");
+            return BadRequest(response);
+        }
 
         //A API deve fornecer endpoints para gerar relatórios de desempenho, como o número médio de tarefas concluídas por usuário nos últimos 30 dias.
         //Os relatórios devem ser acessíveis apenas por usuários com uma função específica de "gerente"
+        // ocultado no Swagger
+        [ApiExplorerSettings(IgnoreApi = true)]
         [Authorize(Policy = "gerente")]
         [HttpGet("/Last30d/users/{userId}")]
         public string GetReportTasksLastDays(int userId)

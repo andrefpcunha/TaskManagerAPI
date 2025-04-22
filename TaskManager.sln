@@ -5,11 +5,15 @@ VisualStudioVersion = 17.13.35931.197 d17.13
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaskManager.API", "TaskManager.API\TaskManager.API.csproj", "{56F55A5F-5D58-4EEF-A300-08EC712892BC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaskManager.Application", "TaskManager.Application\TaskManager.Application\TaskManager.Application.csproj", "{B2794302-500B-439A-9465-6A64D9EC23F8}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaskManager.Application", "TaskManager.Application\TaskManager.Application.csproj", "{B2794302-500B-439A-9465-6A64D9EC23F8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaskManager.Domain", "TaskManager.Domain\TaskManager.Domain\TaskManager.Domain.csproj", "{C85151D9-69D1-4C7F-84B3-329864A3A8BD}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaskManager.Domain", "TaskManager.Domain\TaskManager.Domain.csproj", "{C85151D9-69D1-4C7F-84B3-329864A3A8BD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaskManager.Infra", "TaskManager.Infra\TaskManager.Infra\TaskManager.Infra.csproj", "{D9CCB896-D1AF-4469-8312-C7A84C3F3936}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaskManager.Infra", "TaskManager.Infra\TaskManager.Infra.csproj", "{D9CCB896-D1AF-4469-8312-C7A84C3F3936}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaskManager.Persistence", "TaskManager.Persistence\TaskManager.Persistence.csproj", "{2D15F248-EB47-4FD1-AF40-03F2A3A94C19}"
+EndProject
+Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{81DDED9D-158B-E303-5F62-77A2896D2A5A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +37,14 @@ Global
 		{D9CCB896-D1AF-4469-8312-C7A84C3F3936}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D9CCB896-D1AF-4469-8312-C7A84C3F3936}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D9CCB896-D1AF-4469-8312-C7A84C3F3936}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2D15F248-EB47-4FD1-AF40-03F2A3A94C19}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2D15F248-EB47-4FD1-AF40-03F2A3A94C19}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2D15F248-EB47-4FD1-AF40-03F2A3A94C19}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2D15F248-EB47-4FD1-AF40-03F2A3A94C19}.Release|Any CPU.Build.0 = Release|Any CPU
+		{81DDED9D-158B-E303-5F62-77A2896D2A5A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{81DDED9D-158B-E303-5F62-77A2896D2A5A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{81DDED9D-158B-E303-5F62-77A2896D2A5A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{81DDED9D-158B-E303-5F62-77A2896D2A5A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

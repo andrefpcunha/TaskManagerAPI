@@ -1,0 +1,32 @@
+services:
+  taskmanager.postgres:
+    container_name: taskmanager.postgres
+    image: postgres:17
+    restart: always
+    environment:
+      POSTGRES_DB: taskmanagerdb
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: senha
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    networks:
+      - app-network
+
+  taskmanager.api:
+    image: ${DOCKER_REGISTRY-}taskmanagerapi
+    build:
+      context: .
+      dockerfile: TaskManager.API/Dockerfile
+    networks:
+      - app-network
+    environment:
+      - CONNECTION_STRING=Host=taskmanager.postgres;Port=5432;Database=taskmanagerdb;Username=postgres;Password=senha
+
+volumes:
+  postgres_data:
+
+networks:
+  app-network:
+    driver: bridge
