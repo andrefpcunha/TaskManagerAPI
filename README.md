@@ -2,8 +2,7 @@
 
 **TaskManager API** é uma REST API que permita aos usuários organizar e monitorar suas tarefas diárias, bem como colaborar com colegas de equipe.
 
-This project follows Clean Architecture principles, SOLID design, and modern best practices.
-Este projeto segue boas práticas de SOLID, CLEAN ARCHITETUCRE e alguns padrões de projeto.
+Este projeto segue boas práticas de SOLID, CLEAN ARCHITETUCRE e alguns padrões de projeto, como: Mediator, DDD, Repository.
 
 ---
 
@@ -26,7 +25,6 @@ Este projeto segue boas práticas de SOLID, CLEAN ARCHITETUCRE e alguns padrões
 ## 🧱 Technologies
 
 - .NET 9
-- ASP.NET Core
 - Entity Framework Core
 - PostgreSQL
 - Swagger
