@@ -1,17 +1,9 @@
 ﻿using AutoMapper;
 using MediatR;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Text.Json;
-using System.Threading.Tasks;
 using TaskManager.Application.Commons.Bases;
-using TaskManager.Application.UseCases.Task.v1.UpdateTask;
 using TaskManager.Domain.DTOs;
-using TaskManager.Domain.Entities;
 using TaskManager.Infra.Interfaces.Services;
-using static Microsoft.EntityFrameworkCore.DbLoggerCategory;
 
 namespace TaskManager.Application.UseCases.Task.v1.DeleteTask
 {

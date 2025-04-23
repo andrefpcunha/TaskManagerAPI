@@ -2,8 +2,6 @@
 using MediatR;
 using System.Text.Json;
 using TaskManager.Application.Commons.Bases;
-using TaskManager.Application.Services;
-using TaskManager.Application.UseCases.Project.v1.NewProject;
 using TaskManager.Domain.DTOs;
 using TaskManager.Domain.Entities;
 using TaskManager.Infra.Interfaces.Services;

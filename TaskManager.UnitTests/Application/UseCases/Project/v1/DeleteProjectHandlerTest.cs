@@ -70,9 +70,9 @@ public class DeleteProjectHandlerTest
             Name = "Test",
             Description = "Test",
             OwnerUser = "7f93b273-8581-4e21-b10b-ca82a26b40a8",
-            Tasks = new List<Tasks>
+            Tasks = new List<Domain.Entities.Tasks>
             {
-                new Tasks { Id = 1, ProjectId = 1, Name = "abc", Priority = Domain.Enums.PriorityEnum.Medium, Status = StatusTaskEnum.ToDo }
+                new Domain.Entities.Tasks { Id = 1, ProjectId = 1, Name = "abc", Priority = Domain.Enums.PriorityEnum.Medium, Status = StatusTaskEnum.ToDo }
             }
         };
         _mockProjectService.Setup(service => service.GetProjectById(projectId))

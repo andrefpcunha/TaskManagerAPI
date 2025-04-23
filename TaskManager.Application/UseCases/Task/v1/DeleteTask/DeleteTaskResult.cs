@@ -1,6 +1,4 @@
-﻿using TaskManager.Domain.Entities;
-
-namespace TaskManager.Application.UseCases.Task.v1.DeleteTask
+﻿namespace TaskManager.Application.UseCases.Task.v1.DeleteTask
 {
     public class DeleteTaskResult
     {

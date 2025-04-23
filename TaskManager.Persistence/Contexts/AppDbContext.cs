@@ -1,8 +1,10 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using System.Diagnostics.CodeAnalysis;
 using TaskManager.Domain.Entities;
 
 namespace TaskManager.Persistence.Contexts
 {
+    [ExcludeFromCodeCoverage]
     public class AppDbContext : DbContext
     {
         public DbSet<Projects> Projects => Set<Projects>();

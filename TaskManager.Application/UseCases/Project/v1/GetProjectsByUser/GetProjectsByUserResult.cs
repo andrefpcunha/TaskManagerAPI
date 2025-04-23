@@ -1,7 +1,4 @@
-﻿using TaskManager.Domain.Entities;
-using TaskManager.Domain.Enums;
-
-namespace TaskManager.Application.UseCases.Project.v1.GetProjectsByUser
+﻿namespace TaskManager.Application.UseCases.Project.v1.GetProjectsByUser
 {
     public class GetProjectsByUserResult
     {
